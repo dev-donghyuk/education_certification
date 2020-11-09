@@ -1,0 +1,51 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <script src="./js/jquery-3.0.0.min.js"></script>
+ </head>
+ <body>
+	<h2>변수의 종류?</h2>
+	<ol>
+		<li>전역변수 : 문서 전체에 영향을 주는 변수</li>
+		<li>지역변수 : 함수내에서 선언되어 사용되는 변수로 그 함수 내에서만 영향력을 가지는 변수</li>
+	</ol>
+	<h2>변수의 선언 방법?</h2>
+	 <ol>
+	 	<li>변수는 반드시 영문 대소문자가 와야한다. ex) Aa01,aA01</li>
+	 	<li>변수명 첫글자에는 숫자가 올 수 없다. ex)01Aa, 01_Aa</li>
+	 	<li>변수명 사이에는 공백을 둘 수 없다 ex) count 01</li>
+	 	<li>변수명은 영문 대소문자를 구분한다. ex) Aa !=aA</li>
+	 	<li>변수명으로 색상이 변하는 단어(예약어)는 사용할 수 없다. ex) var, if, break 등...</li>
+	 	<li>변수명에는 특수기호를 사용할 수 없다. (단, '$'와 '_'는 사용 가능!) ex) $Aa, _Aa</li>
+	 	<li>변수명은 의미를 담을 수 있는 이름으로 지정하고, 일명 낙타봉(카멜표기법) 표기법으로 작성할 것을 권장한다. ex) imagename(X) imageName</li>
+	 </ol>
+	 <hr>
+	 <script>
+	 	//var num_1;
+	 	//var num_2;
+	 	//var text_1;
+	 	//var text_2;
+	 	var num_1,num_2,text_1,text_2;
+	 	num_1 = 10;
+	 	num_2 = 20;
+	 	text_1 = "년 후에 당신은";
+	 	text_2 = "웹전문가 입니다!";
+	 	var res = num_1 + text_1 + text_2
+	 	document.write(res + "<br>");
+	 	//함수를 사용자가 만듬
+	 	function hap(){
+	 		var num_1,num_2,text_1,text_2
+	 		num_1 = 30;
+	 		num_2 = 40;
+	 		var result = num_1 + num_2
+	 		return result;
+	 	};
+	 	document.write("지역변수 : " + hap() + "<br>");
+	 	var res2 = num_1 + num_2;
+	 	document.write(res2)
+	 </script>
+ </body>
+</html>

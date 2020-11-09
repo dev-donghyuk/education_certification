@@ -1,0 +1,42 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>연산문제</title>
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <script src="./js/jquery-3.0.0.min.js"></script>
+ </head>
+ <body>
+	<script>
+		var kor = 100;
+		var eng = 80;
+		var mat = 60;
+		hap = kor + eng + mat;
+		avg = hap / 3
+		document.write("국어 = " + kor + "<br>");
+		document.write("영어 = " + eng + "<br>");
+		document.write("수학 = " + mat + "<br>");
+		document.write("총점 = " + hap + "<br>");
+		document.write("평균 = " + avg + "<br>");
+		if(avg>=95){
+			document.write("축하합니다. A+ 입니다.");
+		}else if(avg>=90){
+			document.write("축하합니다. A 입니다.");
+		}else if(avg>=85){
+			document.write("축하합니다. B+ 입니다.");
+		}else if(avg>=80){
+			document.write("축하합니다. B 입니다.");
+		}else if(avg>=75){
+			document.write("축하합니다. C+ 입니다.");
+		}else if(avg>=70){
+			document.write("축하합니다. C 입니다.");
+		}else if(avg>=65){
+			document.write("축하합니다. D+ 입니다.");
+		}else if(avg>=60){
+			document.write("축하합니다. D 입니다.");
+		}else{
+			document.write("축하합니다. F 입니다.");
+		}
+	</script>
+ </body>
+</html>

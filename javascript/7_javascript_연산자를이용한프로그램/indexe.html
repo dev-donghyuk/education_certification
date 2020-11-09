@@ -1,0 +1,60 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <script src="./js/jquery-3.0.0.min.js"></script>
+ </head>
+ <body>
+	<script>
+		var kor =prompt('국어점수를 입력하세요.')
+		kor = Number(kor);
+		var mat =prompt('수학점수를 입력하세요.')
+		mat = Number(mat);
+		var eng =prompt('영어점수를 입력하세요.')
+		eng = Number(eng);
+		tot = kor + mat + eng
+		avg = tot/3
+		document.write("국어 = " + kor + "<br />");
+		document.write("수학 = " + mat + "<br />");
+		document.write("영어 = " + eng + "<br />");
+		document.write("총점 = " + tot + "<br />");
+		document.write("평균 = " + avg + "<br />");
+		if(avg>=90){
+			document.write("너의 평점은 " + "수" + "<br />");
+		}else if(avg>=80 && tot<90){
+			document.write("너의 평점은 " + "우"+ "<br />");
+		}else if(avg>=70 && tot<80){
+			document.write("너의 평점은 " + "미"+ "<br />");
+		}else if(avg>=60 && tot<70){
+			document.write("너의 평점은 " + "양"+ "<br />");
+		}else{
+			document.write("너의 평점은 " + "가"+ "<br />");
+		}
+		if(avg>=95){
+			document.write("너의 학점은 " + "A+"+ "<br />");
+		}else if(avg>=90 && avg<95){
+			document.write("너의 학점은 " + "A"+ "<br />");
+		}else if(avg>=85 && avg<90){
+			document.write("너의 학점은 " + "B+"+ "<br />");
+		}else if(avg>=80 && avg<85){
+			document.write("너의 학점은 " + "B"+ "<br />");
+		}else if(avg>=75 && avg<80){
+			document.write("너의 학점은 " + "C+"+ "<br />");
+		}else if(avg>=70 && avg<75){
+			document.write("너의 학점은 " + "C"+ "<br />");
+		}else if(avg>=65 && avg<70){
+			document.write("너의 학점은 " + "D+"+ "<br />");
+		}else if(avg>=60 && avg<65){
+			document.write("너의 학점은 " + "D"+ "<br />");
+		}else if(avg>=55 && avg<60){
+			document.write("너의 학점은 " + "E+"+ "<br />");
+		}else if(avg>=50 && avg<55){
+			document.write("너의 학점은 " + "E"+ "<br />");
+		}else{
+			document.write("너의 학점은 " + "F"+ "<br />");
+		}
+	</script>
+ </body>
+</html>

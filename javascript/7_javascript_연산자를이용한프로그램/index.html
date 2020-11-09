@@ -1,0 +1,46 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>연산자</title>
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <script src="./js/jquery-3.0.0.min.js"></script>
+ </head>
+ <body>
+	<script>
+		//산수연산자 (+,-,*,/,%)
+		var num = 100;
+		num = num + 100;
+		document.write("num = " + num + "<br />");
+		num++;
+		document.write("num 증가 = " + num + "<br />");
+		//홀짝 판단시 사용하는 연산자 (%)
+		var num2 = 1000;
+		num2 = num2%2;
+		document.write("num2 = " + num2 + "<br />");
+		//논리부정 !
+		var sw = true;
+		sw = !sw
+		console.log(sw);
+		//비교연산자 {==('값'만),===('값' + '타입')}
+		/*var text = '100';
+		var text2 = 100;
+		if(text===text2){
+			alert("두 값은 서로 같다")
+		}else{
+			alert("두 값은 서로 다르다")
+		}*/
+		var kor = prompt('국어점수를 입력하세요.');
+		kor = Number(kor);
+		var eng = prompt('영어점수를 입력하세요.');
+		eng = Number(eng);
+		var tot = kor + eng;
+		var avg = tot/2;
+		document.write("국어점수 = " + kor + "<br />");
+		document.write("영어점수 = " + eng + "<br />");
+		document.write("총점 = " + tot + "<br />");
+		document.write("평균 = " + avg + "<br />");
+		/*document.write("당신이 입력하신 점수는 " + kor + "점 입니다.<br />");*/
+	</script>
+ </body>
+</html>

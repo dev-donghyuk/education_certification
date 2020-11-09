@@ -1,0 +1,84 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>조건문</title>
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <script src="./js/jquery-3.0.0.min.js"></script>
+ </head>
+ <body>
+	<h1>[자바스크립트 조건문]</h1>
+	<ol>
+		<li>프로그램의 핵심</li>
+		<li>프로그램을 인공지능으로(지적) 만들어줌</li>
+		<li>if , if_else , switch</li>
+		<li>주로 비교 연산자를 사용하고 결과값은 true , false 로 반환해줌</li>
+		<hr />
+		<!-- 조건이 하나일 때 -->
+		<script>
+			if(10==10){
+				document.write("같다" + "<br />");
+			}
+		// 조건이 두개일 때
+			if(10!=9){
+				document.write("같지않다" + "<br />");
+			}else{
+				document.write("같다" + "<br />");
+			}
+		// 짝수 홀수 판단
+			if(10%2==0){
+				document.write("짝수" + "<br />");
+			}else{
+				document.write("홀수" + "<br />");
+			}
+			var id = prompt("ID를 입력하세요.")
+			var pw = prompt("PASSWORD를 입력하세요.")
+			if(id=="test" && pw==1111){
+				alert("로그인 하셨습니다.");
+			}else{
+				alert("다시 한 번 로그인 해주세요.");
+			}
+			var jum = prompt("점수를 입력해주세요")
+			jum = Number(jum);
+			if(jum>=90){
+				document.write("수<br />")
+			}else if(jum>=80 & jum<90){
+				document.write("우<br />")
+			}else if(jum>=70 & jum<80){
+				document.write("미<br />")
+			}else if(jum>=60 & jum<70){
+				document.write("양<br />")
+			}else if(jum>=50 & jum<60){
+				document.write("가<br />")
+			}else{
+				document.write("점수를 잘못 입력하셨습니다. 다시 입력해주세요.")
+			}
+		// switch문
+		var point = prompt("등수를 입력하세요.");
+		/*if(point==1){
+			alert("전용비행기 당첨");
+		}else if(point==2){
+			alert("아파트 당첨");
+		}else if(point==3){
+			alert("자가용 당첨");
+		}else{
+			alert("꽝")
+		}*/
+		switch(point){
+			case '1' : 
+			alert("전용비행기 당첨");
+			break;
+			case '2' : 
+			alert("아파트 당첨");
+			break;
+			case '3' : 
+			alert("자가용 당첨");
+			break;
+			default : 
+			alert("꽝");
+			break;
+		}
+		</script>
+	</ol>
+ </body>
+</html>

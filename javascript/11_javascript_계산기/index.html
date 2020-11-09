@@ -1,0 +1,98 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>계산기</title>
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <style>
+  	#cal_wrap{width: 600px;border:3px solid #708090;position: absolute;left:50%;top:50%;margin:-100px 0 0 -300px;padding:20px;}
+  	#cal_wrap div{margin-bottom:10px;}
+  	#cal_wrap label{display:inline-block;width: 150px;height: 30px;line-height:30px;font:bold 16px/30px "맑은 고딕",sans-serif;}
+  	#cal_wrap input[type="text"]{width: 400px;height: 30px;background:#f2f2f2;color:#333;font:bold 16px/30px "맑은 고딕",sans-serif;border:1px solid #ccc;}
+  	#cal_wrap button{font-size:18px;padding:10px 20px;}
+  	#cal_wrap .btn_wrap{text-indent:156px;margin:20px 0;}
+  </style>
+ </head>
+ <body>
+	<div id="cal_wrap">
+		<div class="num_1">
+			<label for="">첫번째 입력값 : </label>
+			<input type="text" id="i_1">
+		</div>
+		<div class="num_2">
+			<label for="">두번째 입력값 : </label>
+			<input type="text" id="i_2">
+		</div>
+		<div class="btn_wrap">
+			<button type="button" id="btn_1">+</button>
+			<button type="button" id="btn_2">-</button>
+			<button type="button" id="btn_3">*</button>
+			<button type="button" id="btn_4">/</button>
+			<button type="button" id="btn_5">%</button>
+			<button type="button" id="btn_6">Clear</button>
+		</div>
+		<div class="res">
+			<label for="">결과 출력값 : </label>
+			<input type="text" id="i_3">
+		</div>
+	</div>
+	<script>
+		var i_1 = document.getElementById('i_1')
+		var i_2 = document.getElementById('i_2')
+		//사칙연산 + 함수
+		function add(){
+			var num_1 = Number(i_1.value)
+			var num_2 = Number(i_2.value)
+			res = num_1 + num_2
+			return i_3.value=res;
+		}
+		function sum(){
+			var num_1 = Number(i_1.value)
+			var num_2 = Number(i_2.value)
+			res = num_1 - num_2
+			return i_3.value=res;
+		}
+		function gob(){
+			var num_1 = Number(i_1.value)
+			var num_2 = Number(i_2.value)
+			res = num_1 * num_2
+			return i_3.value=res;
+		}
+		function div(){
+			var num_1 = Number(i_1.value)
+			var num_2 = Number(i_2.value)
+			res = num_1 / num_2
+			return i_3.value=res;
+		}
+		function na(){
+			var num_1 = Number(i_1.value)
+			var num_2 = Number(i_2.value)
+			res = num_1 % num_2
+			return i_3.value=res;
+		}
+		function clear(){
+			i_1.value=i_2.value=i_3.value=''
+		}
+		//함수 호출하기
+		btn_1.onclick = function(){
+			add();
+		}
+		btn_2.onclick = function(){
+			sum();
+		}
+		btn_3.onclick = function(){
+			gob();
+		}
+		btn_4.onclick = function(){
+			div();
+		}
+		btn_5.onclick = function(){
+			na();
+		}
+		btn_6.onclick = function(){
+			clear();
+		}
+	</script>
+ </body>
+</html>

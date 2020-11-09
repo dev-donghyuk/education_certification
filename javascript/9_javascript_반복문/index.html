@@ -1,0 +1,57 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>반복문(while,for)</title>
+  <script src="./js/jquery-3.0.0.min.js"></script>
+ </head>
+ <body>
+	<h2>[자바스크립트 반복문이란?]</h2>
+	<ol>
+		<li>반복적인 작업을 수행할 때 사용</li>
+		<li>조건문이 프로그램을 지적으로 만든다면, 반복문은 프로그램을 강력하게 만들어 준다.</li>
+		<li>종료되는 조건을 잘못 지정하면 무한반복에 빠지는 치명적인 오류가 있음.</li>
+		<li>while,for 구문 사용...</li>
+	</ol>
+	<hr />
+	<script>
+		//while 반복문 구문
+		var num = 1; //초기값 설정
+		while(num<=10){
+			document.write(num + "<br />");
+			num++;
+		}
+		document.write("<hr />반복문 종료<hr />");
+		var num = 1;
+		var hap = 0;
+		while(num<=100){
+			document.write(num + "<br />");
+			hap = hap + num;
+			num++;
+		}
+		document.write("1~100까지 합=" + hap + " <br />");
+		//짝 홀 판단하는 프로그램
+		var num = 1;
+		while(num<=100){
+			if(num%2==0){
+				document.write(num);
+			}
+			num++;
+		}
+		//10~1까지 숫자 중에서 2의 배수로 출력
+		var num = 10;
+		while(num>=1){
+			document.write("<br />" + num);
+			num--;
+		}
+		//반복문 for문
+		for(var i =1;i<=10;i+=2){
+			document.write("<br />"+ "i=" + i);
+		}
+		//구구단
+		for(var i=1;i<=9;i++){
+			document.write("<br />"+2 + "*" + i + "=" + 2*i)
+		}
+	</script>
+ </body>
+</html>

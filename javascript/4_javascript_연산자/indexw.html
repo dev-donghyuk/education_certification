@@ -1,0 +1,31 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>논리 연산자</title>
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <script src="./js/jquery-3.0.0.min.js"></script>
+ </head>
+ <body>
+	<script>
+		var name ="홍길동";
+		var kor = 50;
+		var eng = 50;
+		var mat = 50;
+		var com = 50;
+		var tot = kor + eng + mat + com;
+		var avg = tot / 4;
+		if(avg>=90){
+			document.write("평균 = " + avg + ", 평점 = " + "수<br>");
+		}else if(avg>=80){
+			document.write("평균 = " + avg + ", 평점 = " + "우<br>");
+		}else if(avg>=70){
+			document.write("평균 = " + avg + ", 평점 = " + "미<br>");
+		}else if(avg>=60){
+			document.write("평균 = " + avg + ", 평점 = " + "양<br>");
+		}else{
+			document.write("평균 = " + avg + ", 평점 = " + "가");
+		}
+	</script>
+ </body>
+</html>

@@ -1,0 +1,55 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <style>
+  	#box_wrap{margin:200px auto;width: 1100px;}
+  	#box_wrap div{width: 100px;height: 100px;border:2px solid #000;float:left;margin:0 20px;}
+  </style>
+ </head>
+ <body>
+	<div id="box_wrap">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<script>
+		$(function(){
+			$("#box_wrap div").click(function(){
+				var box =$(this).index();
+				console.log(box)
+				switch(box){
+					case 0:
+					$(this).css({'background':'red'})
+					break;
+					case 1:
+					$(this).css({'background':'orange'})
+					break;
+					case 2:
+					$(this).css({'background':'yellow'})
+					break;
+					case 3:
+					$(this).css({'background':'green'})
+					break;
+					case 4:
+					$(this).css({'background':'#ccc'})
+					break;
+					case 5:
+					$(this).css({'background':'blue'})
+					break;
+					default:
+					$(this).css({'background':'purple'})
+					break;
+				}
+			});
+		});
+	</script>
+ </body>
+</html>
