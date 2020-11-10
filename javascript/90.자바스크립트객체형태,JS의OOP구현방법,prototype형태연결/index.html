@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title></title>
+   </head>
+   <body></body>
+   <script defer>
+      // JS 객체 형태
+      // - Object 오브젝트 형태
+      // - 인스턴스를 생성할 수 없음
+      var book = {
+         read: function () {},
+      };
+
+      // - function 오브젝트 형태
+      // - function readBook(param){코드}
+      // - 객체이지만, OOP의 객체라고 하기에는 부족
+      // - 객체에 메소드가 하나 있는 모습
+
+      // prototype
+      // - 자바스크립트에 OOP 구현방법은 prototype에 메소드를 연결.
+
+      var book_2 = function () {};
+      book_2.prototype.getBook = function () {
+         return 'JS북';
+      };
+   </script>
+</html>

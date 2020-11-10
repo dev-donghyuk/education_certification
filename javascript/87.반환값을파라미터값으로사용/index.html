@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title></title>
+   </head>
+   <body></body>
+   <script defer>
+      // reduce()
+      // - forEach()처럼 시맨틱 접근
+      // - 배열 끝까지 콜백함수 호출, 파라미터 작성 여부에 따라 처리가 다름
+      // - 파라미터 하나만 작성한 경우
+      // 1
+      // - 인덱스 [0]의 값을 직전 값에 설정
+      // - 인덱스 [1]의 값을 현재 값에 설정
+      // - 인덱스에 1을 설정
+
+      // 2
+      // - 1에서 반환된 값을 직접값에 설정
+      // - 인덱스[2]에 현재 값을 현재값에 설정
+
+      var value = [1, 3, 5, 7];
+      var fn = function (prev, curr, index, all) {
+         console.log(prev + ',' + curr);
+         return prev + curr;
+      };
+      var result = value.reduce(fn);
+      console.log(result);
+      /*
+      1,3
+      4,5
+      9,7
+      16
+      */
+      // - 파라미터 두개만 작성한 경우
+      var value_2 = [1, 3, 5];
+      var result_2 = value_2.reduce(fn, 7); //7이 prev로 세팅
+      /*
+      7,1
+      8,3
+      11,5
+      16
+      */
+
+      // reduceRight()
+      // - 배열 끝엣서 앞으로 하나씩 읽어가면서 reduce와 반대로 처리함
+      var result_3 = value.reduceRight(fn);
+      /*
+      7,5
+      12,3
+      15,1
+      16
+      */
+   </script>
+</html>

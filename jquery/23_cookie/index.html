@@ -1,0 +1,173 @@
+<!Doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href="./css/reset.css" type="text/css" rel="stylesheet">
+  <link href="./css/slick.css" type="text/css" rel="stylesheet">
+  <script src="./js/jquery-3.0.0.min.js"></script>
+  <script src="./js/slick.js"></script>
+  <style>
+  	body{font-family:"맑은 고딕","malgun gothuc","돋움",dotum,sans-serif;}
+  	/*--------------------------------------------------------------popup*/
+	#popup_wrap{width: 100%;background: #595d68;display:none;}
+	#popup_wrap .popup{width: 960px;margin:0 auto;height: 200px;background: url('./images/popup_1.png')no-repeat 110px center;padding:40px 0 0 450px;box-sizing:border-box;}
+	#popup_wrap .popup .text h2{color:#fff;font-size:15px;vertical-align:bottom}
+	#popup_wrap .popup .text h2 strong{font-size:24px;color:#e7e93d;vertical-align:bottom}
+	#popup_wrap .popup .text h3{color:#adbac0;margin-top:17px;font-size:13px;}
+	#popup_wrap .popup .text .detail{display:block;margin-top:24px;}
+	#popup_wrap .popup .close{float:right;margin-right:24px;}
+	#popup_wrap .popup .close label{color:#8b8ead;font-size:13px;vertical-align:middle;}
+	#popup_wrap .popup .close input{vertical-align:bottom;}
+	#popup_wrap .popup .close .btn_close{cursor:pointer;border:none;background: none;vertical-align:middle;outline:none;}
+	/*--------------------------------------------------------------header*/
+	#header{width: 100%;}
+	/*top_header*/
+	#header .top_header{width: 960px;margin:0 auto;overflow:hidden;height:18px;padding-top:5px;}
+	#header .top_header .util{overflow:hidden;float:right;}
+	#header .top_header .util li{float:left;margin-left:12px;}
+	#header .top_header .util li a{display:block;text-indent:-99999px;height: 18px;background: url('./images/gnb.png')no-repeat;}
+	#header .top_header .util .l_1 a{width: 110px;background-position:0 -80px;}
+	#header .top_header .util .l_1 a:hover{background-position:-120px -80px;}
+	#header .top_header .util .l_2 a{width: 87px;background-position:0 -100px;}
+	#header .top_header .util .l_2 a:hover{background-position:-120px -100px;}
+	#header .top_header .util .l_3 a{width: 126px;background-position:0 -120px;}
+	#header .top_header .util .l_3 a:hover{background-position:-130px -120px;}
+	#header .top_header .util .l_4 a{width: 62px;background-position:0 -140px;}
+	#header .top_header .util .l_4 a:hover{background-position:-70px -140px;}
+	/*bot_header*/
+	#header .bot_header{width: 960px;height: 82px;margin:0 auto;}
+	#header .bot_header .logo{float:left;padding:25px 0 0 0;}
+	#header .bot_header .logo a{display:block;text-indent:-99999px;width: 148px;height: 25px;background: url('./images/logo.png')no-repeat;}
+	#header .bot_header .gnb{float:left;overflow:hidden;margin-top:30px;}
+	#header .bot_header .gnb li{float:left;padding:0 40px;position: relative;}
+	#header .bot_header .gnb li::before{content:'';position: absolute;right: 0;top: 0;height: 17px;width: 1px;background:url('./images/nav_line.png')no-repeat;}
+	#header .bot_header .gnb .l_4::before{background: none;}
+	#header .bot_header .gnb li a{display:block;text-indent:-99999px;height: 17px;background: url('./images/gnb.png')no-repeat;}
+	#header .bot_header .gnb .l_1 a{width: 106px;background-position:-100px 0;}
+	#header .bot_header .gnb .l_1 a:hover{background-position:-210px 0;}
+	#header .bot_header .gnb .l_2 a{width: 60px;background-position:-100px -20px;}
+	#header .bot_header .gnb .l_2 a:hover{background-position:-210px -20px;}
+	#header .bot_header .gnb .l_3 a{width: 60px;background-position:-100px -40px;}
+	#header .bot_header .gnb .l_3 a:hover{background-position:-210px -40px;}
+	#header .bot_header .gnb .l_4 a{width: 59px;background-position:-100px -60px;}
+	#header .bot_header .gnb .l_4 a:hover{background-position:-210px -60px;}
+	/*--------------------------------------------------------------main*/
+	#main{padding-top:47px;background: #dce384;width: 100%;height: 700px;position: relative;}
+	#main::after{content:'';position: absolute;left: 0;top: 0;width: 100%;height: 7px;background: url('./images/bg_nav_sub_line.png');}
+	#main .slide{margin:0 auto;width: 960px;}
+	#main .slick-prev,#main .slick-next{z-index:99999;position: absolute;left: 50%;top: 50%;width: 66px;height: 132px;border:none;cursor:pointer;outline:none;text-indent:-99999px;transform:translateY(-50%);display:none;}
+	#main .slick-prev{margin-left:-480px;background: url('./images/btn_pre.png');}
+	#main .slick-next{margin-left:414px;background: url('./images/btn_next.png');}
+	#main .slick-dots{width: 100%;text-align:center;position: absolute;left: 0;bottom: 0;}
+	#main .slick-dots li{display:inline-block;margin:0 3px;}
+	#main .slick-dots li button{border:none;cursor:pointer;outline:none;width: 10px;height: 10px;background: url('./images/page.png')no-repeat center top;text-indent:-99999px;}
+	#main .slick-dots .slick-active button{background-position:0 -10px;}
+  </style>
+ </head>
+ <body>
+ 	<div id="popup_wrap">
+ 		<div class="popup">
+ 			<div class="text">
+ 				<h2><strong>365PLUS 주문도시락</strong>집밥정성 그대로 간편하게!</h2>
+ 				<h3>365일 도시라은 HACCP 인증받은 위생적인 시설에서 매일매일 정성을<br />담아 집밥의 맛 그대로 전해드립니다.</h3>
+ 				<a href="javascript:;" class="detail"><img src="./images/btn_pop.png" alt="자세히보기버튼"></a>
+ 			</div>
+ 			<div class="close">
+ 				<input type="checkbox" id="check" name="today_close">
+ 				<label>오늘 하루 이창 열지 않기</label>
+ 				<button type="button" class="btn_close"><img src="./images/icon_close.png" alt="닫기 버튼"></button>
+ 			</div>
+ 		</div>
+ 	</div>
+	<div id="header">
+		<div class="top_header">
+			<ul class="util">
+				<li class="l_1"><a href="javascript:;">매장찾기</a></li>
+				<li class="l_2"><a href="javascript:;">시식후기</a></li>
+				<li class="l_3"><a href="javascript:;">창업안내</a></li>
+				<li class="l_4"><a href="javascript:;">홈플로그</a></li>
+			</ul>
+		</div>
+		<div class="bot_header">
+			<h1 class="logo"><a href="index.html">로고</a></h1>
+			<ul class="gnb">
+				<li class="l_1"><a href="javascript:;">홈플러스소개</a></li>
+				<li class="l_2"><a href="javascript:;">상품소개</a></li>
+				<li class="l_3"><a href="javascript:;">창업안내</a></li>
+				<li class="l_4"><a href="javascript:;">고객지원</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="main">
+		<ul class="slide">
+			<li><a href="javascript:;"><img src="./images/lqqsdmkrpoz11ivs1rbanner_3.jpg" alt=""></a></li>
+			<li><a href="javascript:;"><img src="./images/qo6an11ylf9n6z1wn1notice_event_mainbanner.jpg" alt=""></a></li>
+			<li><a href="javascript:;"><img src="./images/v98lss1u7vk3876qe8banner_2.jpg" alt=""></a></li>
+		</ul>
+	</div>
+	<script>
+		$(function(){
+
+			$('#popup_wrap').slideDown(500);
+			console.log(GetCookie('hplus'));
+			if(GetCookie('hplus')=='close'){
+			    $('#popup_wrap').hide();
+			}
+			else{
+			   	$('#popup_wrap').slideDown(500);
+			  }
+			// x 버튼을 클릭하면
+			$('.btn_close').click(function(){
+				if($('input[name=today_close]').is(':checked')){
+					setCookie('hplus','close',1);
+					$('#popup_wrap').slideUp(500);
+				}else{
+					$('#popup_wrap').slideUp(500);
+				}
+			    return false;
+			});	
+
+			// GetCookie
+			function GetCookie(name){
+				var value=null, search=name+"=";
+				if(document.cookie.length > 0){
+					var offset=document.cookie.indexOf(search);
+					if(offset != -1){
+						offset+=search.length;
+						var end=document.cookie.indexOf(";", offset);
+						if(end == -1) end=document.cookie.length;
+						value=unescape(document.cookie.substring(offset, end));
+					}
+				} return value;
+			}
+
+			// SetCookie
+			function setCookie(name, value, expiredays){
+				var days=10;
+				if(days){
+					var date=new Date(); 
+					date.setTime(date.getTime()+(days*24*60*60*1000));
+					var expires="; expires="+date.toGMTString();
+				}else{
+					var expires=""; 
+				}
+				document.cookie=name+"="+value+expires+"; path=/";
+			}
+
+
+			$('.slide').slick({
+				autoplay:true,
+				dots:true
+			})
+			$('.slick-prev,.slick-next').hide();
+			$('.slide').mouseenter(function(){
+				$('.slick-prev,.slick-next').stop().fadeIn(300);
+			})
+			$('.slide').mouseleave(function(){
+				$('.slick-prev,.slick-next').stop().fadeOut(300);
+			})
+		});
+	</script>
+ </body>
+</html>
